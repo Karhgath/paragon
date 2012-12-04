@@ -1,16 +1,38 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    @RenderBody()
+  <meta charset="utf-8" />
+  <title>@ViewBag.Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  @Styles.Render("~/Content/bootstrap")
+  @Scripts.Render("~/bundles/modernizr")
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="~/Content/images/favicon.ico"/>
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="~/Content/images/apple-touch-icon-57-precomposed.png" />
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  @Html.Partial("_NavBar")
+  
+  @RenderSection("header", false)
+
+  <div class="container">
+    @RenderBody()
+  </div>
+  
+  @Html.Partial("_Footer")
+
+  @Scripts.Render("~/bundles/jquery", "~/bundles/boostrap")
+  @RenderSection("scripts", false)
 </body>
 </html>

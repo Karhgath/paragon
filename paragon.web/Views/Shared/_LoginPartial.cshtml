@@ -1,0 +1,26 @@
+﻿@using Paragon.Infrastructure
+﻿@if (Request.IsAuthenticated) {
+  <ul class="nav pull-right">
+    <li>
+      <div class="btn-group">
+        <a href="@Url.Profile()" class="btn btn-success"><i class="icon-user icon-white"></i> @User.Identity.Name</a>
+        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+              @Html.AntiForgeryToken()
+              <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            }
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+} else {
+  <ul class="nav pull-right">
+    <li><a id="registerLink" href="@Url.Register()"><i class="icon-plus"></i> Register</a></li>
+    <li><a id="loginLink" href="@Url.Login()"><i class="icon-lock"></i> Log In</a></li>
+  </ul>
+}
