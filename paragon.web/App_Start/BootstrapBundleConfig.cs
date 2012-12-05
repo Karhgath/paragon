@@ -16,13 +16,11 @@ namespace paragon.web.App_Start
             jsBundle.Transforms.Add(new JsMinify());
 
             var lessBundle = new StyleBundle("~/Content/bootstrap")
-                .Include("~/Content/less/bootstrap.less", "~/Content/less/responsive.less");
+                .Include("~/Content/less/bootstrap.less", "~/Content/less/responsive.less", "~/Content/docs.css");
             lessBundle.Transforms.Add(new LessMinify());
 
 			BundleTable.Bundles.Add(jsBundle);
 			BundleTable.Bundles.Add(lessBundle);
-
-            BundleTable.EnableOptimizations = true;
 		}
 	}
 }
