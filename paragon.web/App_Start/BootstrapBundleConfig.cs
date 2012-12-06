@@ -1,9 +1,9 @@
 using System.Web.Optimization;
 using Paragon.Infrastructure;
 
-[assembly: WebActivator.PostApplicationStartMethod(typeof(paragon.web.App_Start.BootstrapBundleConfig), "RegisterBundles")]
+[assembly: WebActivator.PostApplicationStartMethod(typeof(Paragon.Web.App_Start.BootstrapBundleConfig), "RegisterBundles")]
 
-namespace paragon.web.App_Start
+namespace Paragon.Web.App_Start
 {
 	public class BootstrapBundleConfig
 	{

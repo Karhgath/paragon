@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace paragon.web
+namespace Paragon.Web
 {
     public class FilterConfig
     {

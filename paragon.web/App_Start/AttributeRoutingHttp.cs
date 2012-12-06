@@ -1,9 +1,9 @@
 using System.Web.Http;
 using AttributeRouting.Web.Http.WebHost;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(paragon.web.App_Start.AttributeRoutingHttp), "Start")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(Paragon.Web.App_Start.AttributeRoutingHttp), "Start")]
 
-namespace paragon.web.App_Start {
+namespace Paragon.Web.App_Start {
     public static class AttributeRoutingHttp {
 		public static void RegisterRoutes(HttpRouteCollection routes) {
             

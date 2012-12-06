@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace paragon.web
+namespace Paragon.Web
 {
     public class BundleConfig
     {

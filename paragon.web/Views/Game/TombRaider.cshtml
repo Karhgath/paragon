@@ -1,0 +1,14 @@
+﻿@using Paragon.Infrastructure
+@model Paragon.Web.Models.NewGame
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <h4>Welcome to Paragon, @Model.Name!</h4>
+    <p>Enter introduction for tomb raider here</p>
+    <ul class="nav nav-tabs nav-stacked">
+        <li>
+            <a href="@Url.SmallVillage(Model.GameId)" ><h4>Begin your journey</h4></a>
+        </li>
+    </ul>
+</div>

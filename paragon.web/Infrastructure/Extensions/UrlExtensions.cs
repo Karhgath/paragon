@@ -45,5 +45,16 @@ namespace Paragon.Infrastructure
         {
             return url.Content("~/profile");
         }
+
+        public static string Start(this UrlHelper url)
+        {
+            return url.Content("~/start");
+        }
+
+
+        public static string SmallVillage(this UrlHelper url, string gameid)
+        {
+            return url.Content("~/game/" + gameid + "/world/the-empire/small-village");
+        }
     }
 }

@@ -21,11 +21,17 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/apple-touch-icon-72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" href="~/Content/images/apple-touch-icon-57-precomposed.png" />
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
-  @Html.Partial("_NavBar")
+<body data-spy="scroll" data-target=".bs-docs-sidebar" style="padding-top:0px;">
+@*  @Html.Partial("_NavBar")*@
   
-  @RenderSection("header", false)
+  <header class="jumbotron subhead">
+    <div class="container">
+        <h1>Paragon</h1>
+    </div>
+  </header>
 
+  @RenderSection("header", false)
+    
   <div class="container">
     @RenderBody()
   </div>

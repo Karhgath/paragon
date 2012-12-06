@@ -3,20 +3,31 @@
 @{
     ViewBag.Title = "Index";
 }
+@section header {
+<ul class="breadcrumb">
+  <li><a href="#">World</a> <span class="divider">/</span></li>
+  <li><a href="#">The Empire</a> <span class="divider">/</span></li>
+  <li class="active">Small Village</li>
+</ul>    
+}
 
 <div class="row">
-    <h4>Paragon is an online text-based procedural RPG in an original new world</h4>
+    <h4>Small Village</h4>
+    <p>This is quite a small village you've stumbled into.</p>
+    <p>There but a few houses, a blacksmith and an inn in the outskirts of town.</p>
+    <div class="alert alert-block">
+        <h4>Suspicious behavior <span class="label label-warning pull-right">Perception</span></h4>
+        <p>You see someone sneaking out behind the inn.</p>
+        <hr />
+        <a href="" class="btn btn-large">Engage</a>
+        <a href="" class="btn btn-large">Follow</a>
+        <a href="" class="btn btn-large pull-right">Ignore</a>
+    </div>
+    <div class="accordion">
+    <div class="accordion-group">
     <ul class="nav nav-tabs nav-stacked">
         <li>
-            <a class="media" href="@Url.Start()" >
-                <div class="pull-left">
-                    <img class="media-object" src="http://placehold.it/64x64" />
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">New campaign</h4>
-                    <p>Start a new campaign</p>
-                </div>
-            </a>
+            <a class="media" href="@Url.Start()" >Explore</a>
         </li>
         <li class="disabled">
             <a class="media" href="" >
@@ -52,4 +63,6 @@
             </a>
         </li>
     </ul>
+    </div>
+    </div>
 </div>

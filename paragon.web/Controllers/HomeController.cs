@@ -5,8 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using AttributeRouting;
 using AttributeRouting.Web.Mvc;
+using Paragon.Web.Infrastructure;
 
-namespace paragon.web.Controllers
+namespace Paragon.Web.Controllers
 {
 	[RoutePrefix("")]
     public class HomeController : Controller
@@ -23,16 +24,23 @@ namespace paragon.web.Controllers
             return View();
         }
 
-        [GET("profile")]
-        public ActionResult Profile()
+        [GET("start")]
+        public ActionResult Start()
         {
             return View();
         }
 
-        [GET("register")]
-        public ActionResult Register()
+        [POST("start")]
+        public ActionResult Start(Models.NewGame newgame)
         {
-            return View();
+            if (string.IsNullOrEmpty(newgame.Name)) newgame.Name = "Anonymous";
+
+            if (newgame.Template == Models.NewGame.Templates.tombraider)
+            {
+                return RedirectToRoute("Game_TombRaider", new { name = newgame.Name, gameid = new ShortGuid(Guid.NewGuid()) });
+            }
+
+            return RedirectToAction("Start");
         }
     }
 }

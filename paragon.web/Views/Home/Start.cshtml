@@ -1,0 +1,60 @@
+﻿@using Paragon.Infrastructure
+
+@{
+    ViewBag.Title = "Start";
+}
+
+<div class="row">
+    <h4>Before starting your journey, you need to select your character and optionally enter your name for the scoreboard</h4>
+    <hr />
+    <form class="form-horizontal" id="StartForm" method="post">
+      <input type="text" class="input-big" id="Name" name="Name" placeholder="Your name or username"><span class="help-inline">Optional. Will only be used on the scoreboard.</span>
+      <input type="hidden" id="Template" name="Template" value="" />
+    </form>
+
+    <ul class="nav nav-tabs nav-stacked">
+        <li>
+            <a class="media" href="javascript:$('#StartForm #Template').val('tombraider');$('#StartForm').submit();" >
+                <div class="pull-left">
+                    <img class="media-object" src="http://placehold.it/64x64" />
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Tomb Raider&nbsp;&nbsp;
+                        <span class="label label-info">Stealth</span>
+                        <span class="label label-info">Subterfuge</span>
+
+                    </h4>
+                    <p>Your are agile, silent and determined, but you are weak and independant.</p>
+                </div>
+            </a>
+        </li>
+        <li class="disabled">
+            <a class="media" href="" >
+                <div class="pull-left">
+                    <img class="media-object" src="http://placehold.it/64x64" />
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Barbarian&nbsp;&nbsp;
+                        <span class="label">Combat</span>
+                        <span class="label">Presence</span>
+                    </h4>
+                    <p>Your are an intimidating and powerful beast, but you lack social graces and intellect.</p>
+                </div>
+            </a>
+        </li>
+        <li class="disabled">
+            <a class="media" href="" >
+                <div class="pull-left">
+                    <img class="media-object" src="http://placehold.it/64x64" />
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">Bard&nbsp;&nbsp;
+                        <span class="label">Persuasion</span>
+                        <span class="label">Knowledge</span>
+                    </h4>
+                    <p>You have a tongue and mind as sharp as your sword, however you are not very strong or sneaky.</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

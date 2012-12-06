@@ -14,9 +14,12 @@
       <a class="brand" href="@Url.Home()">Paragon</a>
       <div class="nav-collapse collapse" style="height:0px;">
         <ul class="nav">
-          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Home</a></li>
-        </ul>        
-        @*{ Html.RenderPartial("_LoginPartial"); }*@
+          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Character</a></li>
+          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Inventory</a></li>
+          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Journal</a></li>
+          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Map</a></li>
+          <li class="@(current == @Url.Home() ? "active" : "")"><a href="@Url.Home()">Save</a></li>
+        </ul>
       </div>
     </div>
   </div>
