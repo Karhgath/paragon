@@ -11,8 +11,14 @@ namespace Paragon.Web.Controllers
     [RoutePrefix("game/{gameid}/world/the-empire/small-village")]
     public class SmallVillageController : Controller
     {
-		[GET("")]
+        [GET("")]
         public ActionResult Hub(string gameid)
+        {
+            return View();
+        }
+
+        [GET("secret-meeting")]
+        public ActionResult SecretMeeting(string gameid)
         {
             return View();
         }

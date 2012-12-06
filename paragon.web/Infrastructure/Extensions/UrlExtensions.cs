@@ -11,6 +11,11 @@ namespace Paragon.Infrastructure
             return url.RequestContext.HttpContext.Request.RawUrl;
         }
 
+        public static string Current(this UrlHelper url, string path)
+        {
+            return url.RequestContext.HttpContext.Request.RawUrl + "/" + path;
+        }
+
         public static string AbsoluteContent(this UrlHelper url, string path)
         {
             var uri = new Uri(path, UriKind.RelativeOrAbsolute);

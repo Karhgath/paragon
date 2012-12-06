@@ -313,6 +313,7 @@
     <Content Include="Views\Game\TombRaider.cshtml" />
     <Content Include="Views\SmallVillage\Hub.cshtml" />
     <Content Include="Views\Game\_ViewStart.cshtml" />
+    <Content Include="Views\SmallVillage\SecretMeeting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
