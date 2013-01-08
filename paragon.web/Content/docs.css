@@ -210,11 +210,17 @@ hr.soften {
 
 /* Social proof buttons from GitHub & Twitter */
 .bs-docs-social {
-  padding: 15px 0;
-  text-align: center;
+  padding: 0px;
+  text-align: left;
   background-color: #f5f5f5;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.bs-docs-social .breadcrumb {
+  margin-bottom: 0px;
+  margin-left: -15px;
 }
 
 /* Quick links on Home */
@@ -874,6 +880,11 @@ form.bs-docs-example {
   .bs-docs-sidenav.affix {
     top: 0;
   }
+  
+  .bs-docs-social {
+    margin: -20px -20px 0px -20px;
+  }
+  
 }
 
 /* Tablet
@@ -901,10 +912,6 @@ form.bs-docs-example {
   .marketing .span4 {
     margin-bottom: 40px;
   }
-  .bs-docs-social {
-    margin: 0 -20px;
-  }
-
   /* Space out the show-grid examples */
   .show-grid [class*="span"] {
     margin-bottom: 5px;
@@ -919,6 +926,14 @@ form.bs-docs-example {
     position: static;
     width: auto;
     top: 0;
+  }
+  
+  .bs-docs-social {
+    margin: -20px -20px 0px -20px;
+  }
+  
+  .bs-docs-social .breadcrumb {
+      margin-left: 0px;
   }
 
   /* Unfloat the back to top link in footer */
@@ -971,6 +986,10 @@ form.bs-docs-example {
   }
   .marketing-byline {
     font-size: 18px;
+  }
+  
+  .bs-docs-social .breadcrumb {
+      margin-left: 0px;
   }
 
   /* center example sites */

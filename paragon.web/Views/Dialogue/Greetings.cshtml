@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section header {
+<div class="bs-docs-social">
+    <div class="container">
+    <ul class="breadcrumb">
+        <li><a href="#">World</a> <span class="divider">/</span></li>
+        <li><a href="#">The Empire</a> <span class="divider">/</span></li>
+        <li><a href="#">Small Village</a> <span class="divider">/</span></li>
+        <li><a href="#">Dark Alleys</a> <span class="divider">/</span></li>
+        <li><a href="#">Dead End</a> <span class="divider">/</span></li>
+        <li class="active">Suspicious Character</li>
+    </ul>    
+    </div>
+</div>
+}
+
+    
+    <div class="media">
+        <div class="pull-left"><img class="media-object" src="http://placehold.it/128x128" /></div>
+        <div class="media-body">
+            <div class="span4">
+                <h4>Suspicious Character <span class="label label-warning">Uncooperative</span></h4>
+                <div>
+                    <span class="badge">Conspirator</span>
+                    <span class="badge">Family hostage</span>
+                    <span class="badge">Way over my head</span>
+                </div>
+            </div>
+            <div class="span2">
+                <div class="progress progress-danger">
+                    <div class="bar" style="width: 100%">Health</div>
+                </div>
+                <div class="progress progress-warning">
+                    <div class="bar" style="width: 100%">Composure</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <p>The suspicious character looks barely startled but stutters slightly.</p>
+
+    <blockquote>"Hey, go aw... go away now!"</blockquote>
+
+    <p>He turns around and walks back toward the inn.</p>
+
+    <ul class="nav nav-tabs nav-stacked">
+@*        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-comment-alt"></i> Talk about <b>Suspicious behavior</b></h4></a>
+        </li>*@
+
+        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-comment-alt"></i> Introduce yourself <span class="label pull-right">rapport</span></h4></a>
+        </li>
+
+        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-fire"></i> Threaten him <span class="label pull-right">intimidation</span></h4></a>
+        </li>
+
+        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-fire"></i> Bluff to get his attention <span class="label pull-right">deceit</span></h4></a>
+        </li>
+
+        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-arrow-left"></i> Leave</h4></a>
+        </li>
+    </ul>
+
+    <form class="form-horizontal" id="OptionForm" method="post">
+      <input type="hidden" id="action" name="action" value="" />
+    </form>
+
+@*    <ul class="nav nav-tabs nav-stacked">
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-search"></i> Explore <span class="label pull-right">Investigation</span></h4></a>
+        </li>
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-shopping-cart"></i> Buy/Sell <span class="label pull-right">Negociation</span></h4></a>
+        </li>
+        <li>
+            <a class="media" href="@Url.Current("inn")"><h4><i class="icon icon-glass"></i> Visit Inn</h4></a>
+        </li>
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-legal"></i> Visit Blacksmith</h4></a>
+        </li>
+    </ul>*@

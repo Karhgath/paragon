@@ -1,0 +1,54 @@
+﻿NAME a-suspicious-man "A Suspicious Man"
+
+REALM the-empire
+
+HUB small-village
+
+TIME NIGHT
+
+TYPE INTERRUPT
+
+TRIGGER ONCE 
+	WHEN VISIT inn 
+	HAVING SKILL perception 4
+
+CHARACTERS
+	NAMED suspicious-man "Suspicious man"
+	NAMED conspirator "Conspirator"
+
+SCENE start "A Suspicious Man" WITH
+	DESCRIPTION "P1"
+	DESCRIPTION "P2"
+
+	CHARACTER suspicious-man
+
+	OPTION "Talk" DO
+		GOTO spooked
+	OPTION "Follow" HAVING SKILL stealth 4 DO
+		ROLL 5 SUCCESS GOTO followed ELSE GOTO lost
+	OPTION "Leave" DO
+		END
+		
+SCENE spooked "Spooked" WITH
+	DESCRIPTION "assl"
+
+	CHARACTER suspicious-man
+
+	OPTION "Intimidate" HAVING SKILL intimidate 4 DO
+		ROLL 5 SUCCESS GOTO intimidated ELSE GOTO lost
+	OPTION "Run after" HAVING SKILL athletics 4 DO
+		ROLL 5 SUCCESS GOTO caught ELSE GOTO lost
+	OPTION "Leave" DO 
+		END
+
+SCENE followed "Following" WITH
+	DESCRIPTION "lalala"
+
+SCENE lost "Lost" WITH
+	DESCRIPTION "lalala"
+
+SCENE intimidated "Intimidated" WITH
+	DESCRIPTION "lalala"
+
+SCENE caught "Caught!" WITH
+	DESCRIPTION "lalala"

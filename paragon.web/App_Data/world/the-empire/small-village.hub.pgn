@@ -1,0 +1,28 @@
+﻿NAME small-village "Small Village"
+REALM the-empire
+HUB-TYPE urban
+
+LINE "This is quite a $(small village) you've stumbled into."
+LINE "There but a few houses, a $(blacksmith) and an $(inn) in the outskirts of town."
+LORE "You heard the village is run by a $(crazy mayor)." HAVING SKILL knowledge 4-
+
+OPTION "Explore" 
+	WITH ICON icon-search 
+	USING SKILL investigation 
+	DO EVENT explore
+
+OPTION "Buy/Sell"
+	WITH ICON icon-shopping-cart
+	USING SKILL negociation 
+	DO SHOP shop
+
+OPTION "Visit Inn"
+	WITH ICON icon-glass
+	DO VISIT inn
+
+OPTION "Visit Blacksmith"
+	WITH ICON icon-legal
+	DO VISIT blacksmith
+	
+LOCATION blacksmith
+LOCATION inn

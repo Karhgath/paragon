@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AttributeRouting;
 using AttributeRouting.Web.Mvc;
-using Paragon.Web.Infrastructure;
+using Paragon.Infrastructure;
 
 namespace Paragon.Web.Controllers
 {

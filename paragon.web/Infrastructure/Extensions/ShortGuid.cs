@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Paragon.Web.Infrastructure
+namespace Paragon.Infrastructure
 {
     public class ShortGuid
     {

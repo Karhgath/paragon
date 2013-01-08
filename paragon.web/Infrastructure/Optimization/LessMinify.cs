@@ -23,7 +23,7 @@ namespace Paragon.Infrastructure
 
              context.HttpContext.Response.Cache.SetLastModifiedFromFileDependencies();
 
-             var lessParser = new Parser();
+             var lessParser = new dotless.Core.Parser.Parser();
              ILessEngine lessEngine = CreateLessEngine(lessParser);
 
              var content = new StringBuilder(bundle.Content.Length);
@@ -46,7 +46,7 @@ namespace Paragon.Infrastructure
          /// Creates an instance of LESS engine.
          /// </summary>
          /// <param name="lessParser">The LESS parser.</param>
-         private ILessEngine CreateLessEngine(Parser lessParser)
+         private ILessEngine CreateLessEngine(dotless.Core.Parser.Parser lessParser)
          {
              var logger = new AspNetTraceLogger(LogLevel.Debug, new Http());
              return new LessEngine(lessParser, logger, true, false);
@@ -56,7 +56,7 @@ namespace Paragon.Infrastructure
          /// Adds imported files to the collection of files on which the current response is dependent.
          /// </summary>
          /// <param name="lessParser">The LESS parser.</param>
-         private void AddFileDependencies(Parser lessParser)
+         private void AddFileDependencies(dotless.Core.Parser.Parser lessParser)
          {
              IPathResolver pathResolver = GetPathResolver(lessParser);
 
@@ -73,7 +73,7 @@ namespace Paragon.Infrastructure
          /// Returns an <see cref="IPathResolver"/> instance used by the specified LESS lessParser.
          /// </summary>
          /// <param name="lessParser">The LESS prser.</param>
-         private IPathResolver GetPathResolver(Parser lessParser)
+         private IPathResolver GetPathResolver(dotless.Core.Parser.Parser lessParser)
          {
              var importer = lessParser.Importer as Importer;
              if (importer != null)
@@ -94,7 +94,7 @@ namespace Paragon.Infrastructure
          /// </summary>
          /// <param name="lessParser">The LESS parser.</param>
          /// <param name="currentFilePath">The path to the currently processed file.</param>
-         private void SetCurrentFilePath(Parser lessParser, string currentFilePath)
+         private void SetCurrentFilePath(dotless.Core.Parser.Parser lessParser, string currentFilePath)
          {
              var importer = lessParser.Importer as Importer;
              if (importer != null)

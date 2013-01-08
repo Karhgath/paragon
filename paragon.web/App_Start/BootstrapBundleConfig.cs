@@ -16,7 +16,7 @@ namespace Paragon.Web.App_Start
             jsBundle.Transforms.Add(new JsMinify());
 
             var lessBundle = new StyleBundle("~/Content/less/bootstrap")
-                .Include("~/Content/less/bootstrap.less", "~/Content/less/responsive.less", "~/Content/docs.css");
+                .Include("~/Content/less/bootstrap.less", "~/Content/less/responsive.less", "~/Content/docs.css", "~/Content/DT_bootstrap.css");
             lessBundle.Transforms.Add(new LessMinify());
 
 			BundleTable.Bundles.Add(jsBundle);

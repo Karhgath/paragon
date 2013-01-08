@@ -1,0 +1,80 @@
+﻿@model Paragon.Parser.Hub
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section header {
+<div class="bs-docs-social">
+    <div class="container">
+<ul class="breadcrumb">
+    <li><a href="#">World</a> <span class="divider">/</span></li>
+    <li><a href="#">The Empire</a> <span class="divider">/</span></li>
+    <li class="active">Small Village</li>
+</ul>    
+        </div>
+</div>
+}
+
+    <h4>@Model.Name [@Model.HubType]</h4>
+
+    @foreach (var line in Model.Lines)
+    {
+        <p>@Html.ParseKeyword(line)</p>
+    }
+
+    <hr />
+
+    @foreach (var lore in Model.Lores)
+    {
+        <p>@Html.ParseKeyword(lore.Text)  
+            <span class="label label-info">@lore.Skill.Split('/')[1]</span>
+        @if (@lore.Value.Skip(1).Any())
+        {
+             <span class="label">@lore.Value.First()-@lore.Value.Last()</span>
+        }
+        else
+        {
+            <span class="label">@lore.Skill.Split('/')[1] @lore.Value.First()</span>
+        }
+        </p>
+    }
+
+    <ul class="nav nav-tabs nav-stacked">
+        @foreach (var option in Model.Options)
+        {
+            <li>
+                <a class="media" href="javascript:$('#OptionForm #action').val('@option.Action');$('#OptionForm').submit();">
+                    <h4><i class="icon @option.Icon"></i> @option.Text 
+                    @foreach (var use in option.Using)
+                    {
+                        <span class="label pull-right">@use.Split('/')[1]</span>
+                    }
+                    </h4>
+                </a>
+            </li>
+        }
+
+        <li>
+            <a class="media" href="@Url.Back()"><h4><i class="icon icon-arrow-left"></i> Back to The Empire</h4></a>
+        </li>
+    </ul>
+
+    <form class="form-horizontal" id="OptionForm" method="post">
+      <input type="hidden" id="action" name="action" value="" />
+    </form>
+
+@*    <ul class="nav nav-tabs nav-stacked">
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-search"></i> Explore <span class="label pull-right">Investigation</span></h4></a>
+        </li>
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-shopping-cart"></i> Buy/Sell <span class="label pull-right">Negociation</span></h4></a>
+        </li>
+        <li>
+            <a class="media" href="@Url.Current("inn")"><h4><i class="icon icon-glass"></i> Visit Inn</h4></a>
+        </li>
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-legal"></i> Visit Blacksmith</h4></a>
+        </li>
+    </ul>*@

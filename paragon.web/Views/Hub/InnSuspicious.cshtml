@@ -1,0 +1,33 @@
+﻿@using Paragon.Infrastructure
+
+@{
+    ViewBag.Title = "Index";
+}
+@section header {
+<div class="bs-docs-social">
+    <div class="container">
+<ul class="breadcrumb">
+    <li><a href="#">World</a> <span class="divider">/</span></li>
+    <li><a href="#">The Empire</a> <span class="divider">/</span></li>
+    <li class="active">Small Village</li>
+</ul>    
+        </div>
+</div>
+}
+
+    <h4>Small Village - Inn [Interrupt]</h4>
+    <div class="alert">
+        <span class="label label-success pull-left">Perception</span>&nbsp;&nbsp;
+        <strong>As you approach the inn, a suspicious man sneaks out from the back.</strong>
+    </div>
+    <ul class="nav nav-tabs nav-stacked">
+        <li>
+            <a class="media" href="@Url.Current("../secret-meeting")"><h4><i class="icon icon-eye-close"></i> Follow <span class="label pull-right">Stealth</span></h4></a>
+        </li>
+        <li>
+            <a class="media" href="dialog/suspicious-man"><h4><i class="icon icon-comment-alt"></i> Talk</h4></a>
+        </li>
+        <li>
+            <a class="media" href=""><h4><i class="icon icon-remove"></i> Ignore</h4></a>
+        </li>
+    </ul>

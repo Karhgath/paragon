@@ -1,0 +1,21 @@
+﻿<Program> ::= <Name> <HubType> <DescriptionList> <OptionList>
+<Name> ::= "name" <identifier> <text>
+<HubType> ::= "urban" | "wilderness"
+<DescriptionList> ::= <Line>+ <More>*
+<Line> ::= "line" <text>
+<More> ::= "more" <text>
+<OptionList> ::= <option>+
+<Option> ::= "option" <text> <With>* <Using>* <Do>
+<With> ::= "with" <WithType>
+<WithType> ::= <WithTypeIcon>
+<WithTypeIcon> ::= "icon" <identifier>
+<Using> ::= "using" <UsingType>
+<UsingType> ::= <UsingTypeSkill>
+<UsingTypeSkill> ::= "skill" <Skill>
+<Skill> ::= "investigation" | "negociation"
+<Do> ::= "do" <DoType>
+<DoType> ::= <DoTypeEvent> | <DoTypeShop> | <DoTypeVisit>
+<DoTypeEvent> ::= "event" <identifier>
+<DoTypeShop> ::= "shop" <identifier>
+<DoTypeVisit> ::= "visit" <identifier>
+
