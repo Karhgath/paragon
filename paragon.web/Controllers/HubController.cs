@@ -15,12 +15,19 @@ namespace Paragon.Web.Controllers
         [GET("")]
         public ActionResult Hub(string gameid, string realm, string hub)
         {
-            var file = new Infrastructure.FileHandler(Server);
-            var text = file.ReadHub(realm, hub);
+            try
+            {
+                var file = new Infrastructure.FileHandler(Server);
+                var text = file.ReadHub(realm, hub);
 
-            var vm = Parser.HubGrammar.Instance.ParseString(text);
-            
-            return View(vm);
+                var vm = Parser.HubGrammar.Instance.ParseString(text);
+
+                return View(vm);
+            }
+            catch (Exception ex)
+            {
+                return View("ErrorEx", ex);
+            }
         }
 
         [POST("")]

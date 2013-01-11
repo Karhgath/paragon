@@ -454,6 +454,7 @@
     <Content Include="Views\Hub\SecretMeeting.cshtml" />
     <Content Include="Views\Hub\InnSuspicious.cshtml" />
     <Content Include="Views\Dialogue\Greetings.cshtml" />
+    <Content Include="Views\Shared\ErrorEx.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
